@@ -42,6 +42,7 @@ d-i partman-auto/expert_recipe string \
                               use_filesystem{ } filesystem{ ext4 } \
                               mountpoint{ / } \
                       .
+d-i partman-auto/choose_recipe select boot-lvm
 d-i partman-auto/purge_lvm_from_device boolean true
 d-i partman/default_filesystem string ext4
 d-i partman-auto/init_automatically_partition select biggest_free
