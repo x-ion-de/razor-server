@@ -1,0 +1,7 @@
+---
+description: FreeDOS BIOS Update
+os: freedos
+os_version: 1.1
+boot_sequence:
+  1: boot_install
+  default: boot_local

@@ -8,6 +8,7 @@ sleep 60
 
 # APT configuration and system update
 sed -i s$'\001'<%= repo_url %>$'\001'http://eu.archive.ubuntu.com/ubuntu$'\001' /etc/apt/sources.list
+
 apt-get -y update
 [ "$?" -eq 0 ] || curl -s <%= log_url("apt_update_fail", :error) %>
 
@@ -17,11 +18,6 @@ apt-get -y upgrade
 apt-get -y dist-upgrade
 [ "$?" -eq 0 ] || curl -s <%= log_url("apt_dist_upgrade_fail", :error) %>
 
-apt-get -y install linux-generic-lts-wily
-[ "$?" -eq 0 ] || curl -s <%= log_url("apt_install_wily_kernel_fail", :error) %>
-
-# Remove blacklist needed for proper installation
-rm /etc/modprobe.d/blacklist.local.conf
 
 <%= render_template("store_ip") %>
 

@@ -58,6 +58,7 @@ cat <<'EOP'
 	log_level :info
 	log_location STDOUT
 	chef_server_url "<%= broker.chef_server_url %>"
+	ssl_verify_mode :verify_none
 	validation_client_name "<%= broker.validation_client_name %>"
 EOP
 ) > /etc/chef/client.rb

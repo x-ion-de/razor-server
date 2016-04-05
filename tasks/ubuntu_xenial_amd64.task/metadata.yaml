@@ -1,0 +1,6 @@
+---
+
+os_version: xenial
+architecture: amd64
+label: Ubuntu Xenial 16.04 amd64
+base: ubuntu

@@ -1,0 +1,6 @@
+---
+
+os_version: wily
+architecture: amd64
+label: Ubuntu Wily 15.10 amd64
+base: ubuntu

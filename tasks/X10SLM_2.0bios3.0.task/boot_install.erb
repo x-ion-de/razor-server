@@ -1,0 +1,13 @@
+#!ipxe
+echo Razor <%= task.label %> task boot_call
+echo Installation node: <%= node_url  %>
+echo Installation repo: <%= repo_url %>
+echo Sending stage_done premature, hopefully not in error:
+echo <%= stage_done_url("finished") %>
+
+<% system "(sleep 300 ;curl -s #{stage_done_url("finished")})&" %>
+sleep 5
+
+kernel <%= repo_url("memdisk") %>
+initrd <%= repo_url("freedos.img") %>
+boot
