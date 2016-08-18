@@ -64,11 +64,11 @@ d-i passwd/user-password-again password insecure
 d-i user-setup/allow-password-weak boolean true
 d-i apt-setup/restricted boolean true
 d-i pkgsel/include string curl openssh-server
+d-i grub-installer/bootdev string /dev/sda
 d-i grub-installer/only_debian boolean true
 d-i grub-installer/with_other_os boolean true
 d-i finish-install/reboot_in_progress note
-# Uncomment this for `nomodeset`.
-# d-i debian-installer/add-kernel-opts string nomodeset
+d-i debian-installer/add-kernel-opts string consoleblank=0
 # Our callbacks
 d-i preseed/early_command string wget <%= log_url("preseed start") %>
 d-i preseed/late_command string  wget <%= log_url("preseed end") %>; \
