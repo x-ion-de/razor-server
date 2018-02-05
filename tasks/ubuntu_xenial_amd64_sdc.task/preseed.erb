@@ -23,7 +23,7 @@ d-i partman-md/device_remove_md boolean true
 d-i partman-auto-lvm/guided_size string max
 d-i partman-auto/expert_recipe string \
               boot-lvm :: \
-                      256 256 256 ext2 \
+                      2048 2048 2048 ext2 \
                               $primary{ } $bootable{ } \
                               method{ format } format{ } \
                               use_filesystem{ } filesystem{ ext2 } \
